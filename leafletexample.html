@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ATC Program</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+  <style>
+  * {
+  box-sizing: border-box;
+}
+  #mapContainer{
+  position: absolute;
+  height:930px;
+  width:70%;
+  }
+  /* Create 1st column */
+.column {
+	float:right;
+	display:inline;
+		height: 930px;
+		padding: 10px;
+		width:30%;
+        
+}
+
+  </style>
+  </head>
+  <body>
+  <div class="row">
+	
+	
+   <div id= "mapContainer"</div>  
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+<script type="text/javascript" src="MovingMarker.js"></script>
+<script src="canvas.js"></script>
+<script>
+var map = L.map('mapContainer').setView([40.505, -74], 8);
+
+var layer= L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'}).addTo(map)
+
+
+
+
+	var circle = L.circle([40.6413, -73.7781], {
+    color: 'purple',
+    fillColor: 'black',
+    fillOpacity: 0.5,
+    radius: 7000
+}).bindPopup('JFK').addTo(map);
+var circle = L.circle([39.8744, -75.2424], {
+    color: 'purple',
+    fillColor: 'black',
+    fillOpacity: 0.5,
+    radius: 7000
+}).bindPopup('PHL').addTo(map);
+var circle = L.circle([40.6518, -75.4414], {
+    color: 'purple',
+    fillColor: 'black',
+    fillOpacity: 0.5,
+    radius: 7000
+}).bindPopup('LVI').addTo(map);
+var circle = L.circle([40.2042, -75.4301], {
+    color: 'purple',
+    fillColor: 'black',
+    fillOpacity: 0.5,
+    radius: 7000
+}) .bindPopup('PVA').addTo(map);
+var myMovingMarker = L.Marker.movingMarker([[39.8744, -75.2424],[40.6413, -73.7781]],[20000], {icon: vector}).addTo(map).bindPopup('N6701S');
+myMovingMarker.start();
+</script>
+<script>
+</script>
+</div>
+    <div class="column" style="background-color:gray;">
+		<h2>Panel</h2>
+		<input id="Button1" type="button" value="M1 " /> 
+
+        <input id="Button2" type="button" value="M2 " /> 
+
+        <input id="Button3" type="button" value="M3 " /> 
+
+        <input id="Button4" type="button" value="M4 " /> 
+
+        <input id="Button3" type="button" value="CON" /> 
+
+        <input id="Button4" type="button" value="MAP" /> 
+
+        <input id="Button1" type="button" value="M5 " /> 
+
+        <input id="Button2" type="button" value="M6 " /> 
+
+        <input id="Button3" type="button" value="M7 " /> 
+
+        <input id="Button4" type="button" value="M8 " /><br/> 
+
+        <input id="Button1" type="button" value="M9 " /> 
+
+        <input id="Button2" type="button" value="M10" /> 
+
+        <input id="Button3" type="button" value="M11" /> 
+
+        <input id="Button4" type="button" value="M12" /> 
+
+        <input id="Button3" type="button" value="TRK" /> 
+
+        <input id="Button4" type="button" value="USR" /> 
+
+        <input id="Button1" type="button" value="M13" /> 
+
+        <input id="Button2" type="button" value="M14" /> 
+
+        <input id="Button3" type="button" value="M15" /> 
+
+        <input id="Button4" type="button" value="M16" /><br/><br/> 
+
+         
+
+        <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><button>8</button><button>9</button><button>0</button><button>-</button><button>+</button><button>Backspace</button><br/> 
+
+        &nbsp;&nbsp;<button>Q</button><button>W</button><button>E</button><button>R</button><button>T</button><button>Y</button><button>U</button><button>I</button><button>O</button><button>P</button><button>[</button><button>]</button><button>\</button><br/> 
+
+        &nbsp;&nbsp;&nbsp;&nbsp;<button>A</button><button>S</button><button>D</button><button>F</button><button>G</button><button>H</button><button>J</button><button>K</button><button>L</button><button>;</button><button>'</button><button>Enter</button><br/> 
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Z</button><button>X</button><button>C</button><button>V</button><button>B</button><button>N</button><button>N</button><button>M</button><button>,</button><button>.</button><button>/</button><button>Shift</button><br/> 
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Space</button> 
+	</div>
+</div>
+  </body>
+</html>
